@@ -1,12 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { collection, getDoc } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 export const fetchData = createAsyncThunk("data/fetchData", async () => {
-  const response = await getDoc(collection(db, "courses"));
-  response.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
-  });
+  try {
+    const courseList = [];
+    const response = await getDocs(collection(db, "1"));
+    response.forEach((doc) => {
+      courseList.push(doc.data());
+    });
+    return courseList;
+  } catch (error) {
+    throw Error(error);
+  }
 });
 
 // Create a data slice

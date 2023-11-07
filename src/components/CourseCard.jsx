@@ -1,16 +1,13 @@
 import courseModel from "../assets/utils";
 import { useEffect } from "react";
-import { fetchData } from "../features/CourseSlice";
+import { fetchData } from "../redux/features/CourseSlice";
 import { useDispatch, useSelector } from "react-redux";
 const CourseCard = () => {
-  //   const dispatch = useDispatch();
-  //   console.log(dispatch(fetchData()));
-  //   console.log(fetchData());
   const { data, status } = useSelector((state) => state.data);
 
   const dispath = useDispatch();
   useEffect(() => {
-    if (status === "Idle") {
+    if (status === "idle") {
       dispath(fetchData());
     }
   }, [dispath, status]);
@@ -18,24 +15,9 @@ const CourseCard = () => {
   useEffect(() => {
     if (status === "succeeded") {
       console.log(data);
-      //   let courseData = data?.filter((course) => {
-      //     return course?.id === parseInt(id);
-      //   });
-      //   if (courseData.length === 1) {
-      //     setTimeout(() => {
-      //       //   setLoading(false);
-      //     }, 1000);
-      //     console.log(courseData);
-      //     // setCourseData(courseData[0]);
-      //     // setIsValid(true);
-      //   } else {
-      //     setTimeout(() => {
-      //       //   setLoading(false);
-      //     }, 1000);
-      // setIsValid(false);
     }
   }, [data, status]);
-  console.log(data);
+  console.log({ data });
   return (
     <div className="w-[320px] h-[400px]  md:w-[360px] md:h-[420px] bg-white text-black rounded-2xl relative">
       <img src={courseModel.thumbnail} className="h-[30%] mx-auto pt-5 mb-2" />
