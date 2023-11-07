@@ -1,5 +1,6 @@
 import "./App.css";
 import CourseCard from "./components/CourseCard";
+import Courses from "./components/Courses";
 import Navbar from "./components/Navbar";
 function App() {
   return (
@@ -7,11 +8,8 @@ function App() {
       <nav>
         <Navbar />
       </nav>
-      <main className="w-[80%] mx-auto flex flex-col md:flex-row md:flex-wrap gap-5">
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
+      <main>
+        <Courses />
       </main>
     </>
   );
