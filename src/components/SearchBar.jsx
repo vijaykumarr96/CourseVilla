@@ -11,7 +11,7 @@ const SearchBar = () => {
     <div className="w-full ">
       <input
         type={"search"}
-        placeholder="find course by name or author..."
+        placeholder="Find course by name or author..."
         className="w-full p-4 bg-white rounded-full text-black px-10 md:text-2xl"
         value={text}
         onChange={handleSearch}
