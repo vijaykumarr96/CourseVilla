@@ -1,5 +1,3 @@
-// import courseModel from "../assets/utils";
-
 const CourseCard = (course) => {
   console.log(course.course);
   const {
@@ -13,8 +11,8 @@ const CourseCard = (course) => {
   } = course.course;
   return (
     <div className="w-[320px] h-[400px]  md:w-[360px] md:h-[420px] bg-white text-black rounded-2xl relative">
-      <img src={thumbnail} className="h-[30%] mx-auto pt-5 mb-2" />
-      <div className="mx-7 text-center min-h-[130px]">
+      <img src={thumbnail} className="h-[30%] mx-auto ptefrf-5 my-2" />
+      <div className="mx-7 text-center h-[130px]">
         <h1 className="text-sm md:text-xl font-semibold text-gray-800">
           {name}
         </h1>
