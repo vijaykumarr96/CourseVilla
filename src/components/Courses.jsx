@@ -28,9 +28,8 @@ const Courses = () => {
       ? true
       : false;
   };
-  console.log(text);
   return (
-    <div className="w-[80%] mx-auto flex flex-col md:flex-row md:flex-wrap gap-5">
+    <div className="w-[80%] mx-auto flex flex-col justify-center md:flex-row md:flex-wrap gap-5 mt-28">
       <SearchBar />
       {courseData &&
         courseData
