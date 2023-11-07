@@ -2,7 +2,7 @@ import "./App.css";
 import Courses from "./components/Courses";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CourseDetails from "./pages/CourseDetails";
+import CoursePage from "./pages/CoursePage";
 function App() {
   return (
     <div>
@@ -15,7 +15,7 @@ function App() {
           <Route
             exact="true"
             path="course/:id"
-            element={<CourseDetails />}
+            element={<CoursePage />}
           ></Route>
         </Routes>
       </BrowserRouter>

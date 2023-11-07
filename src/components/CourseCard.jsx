@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 const CourseCard = (course) => {
   const {
+    id,
     thumbnail,
     name,
     instructor,
@@ -32,9 +34,11 @@ const CourseCard = (course) => {
         <p className="text-green-500 font-bold">{enrollmentStatus}</p>
       </div>
       <p className="bg-gray-200 w-[80%] mx-auto h-0.5 mb-5"></p>
-      <button className=" rounded-xl bg-pink-500 text-white text-md absolute right-8 w-[145px] h-12 shadow-lg">
-        View Course
-      </button>
+      <Link to={`/course/${id}`}>
+        <button className=" rounded-xl bg-pink-500 text-white text-md absolute right-8 w-[145px] h-12 shadow-lg">
+          View Course
+        </button>
+      </Link>
     </div>
   );
 };
