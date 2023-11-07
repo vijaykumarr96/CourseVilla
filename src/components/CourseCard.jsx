@@ -1,5 +1,4 @@
 const CourseCard = (course) => {
-  console.log(course.course);
   const {
     thumbnail,
     name,
