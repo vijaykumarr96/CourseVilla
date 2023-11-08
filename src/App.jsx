@@ -3,6 +3,7 @@ import Courses from "./components/Courses";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CoursePage from "./pages/CoursePage";
+import DashBoard from "./pages/DashBoard";
 function App() {
   return (
     <div>
@@ -17,6 +18,7 @@ function App() {
             path="course/:id"
             element={<CoursePage />}
           ></Route>
+          <Route exact="true" path="dashboard" element={<DashBoard />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

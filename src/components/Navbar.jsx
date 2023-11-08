@@ -6,9 +6,11 @@ const Navbar = () => {
         <img src="/coursevilla.svg" alt="logo" width={40} height={40} />
       </Link>
       <div>
-        <button className="md:text-xl text-md font-semibold text-secondary">
-          Dashboard
-        </button>
+        <Link to={`/dashboard`}>
+          <button className="md:text-xl text-md font-semibold text-secondary">
+            Dashboard
+          </button>
+        </Link>
       </div>
     </div>
   );
