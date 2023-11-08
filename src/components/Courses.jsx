@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { fetchData } from "../redux/features/CourseSlice";
+import { fetchData } from "../redux/features/courseSlice";
 import { useDispatch, useSelector } from "react-redux";
 import CourseCard from "./CourseCard";
 import SearchBar from "./SearchBar";

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchData } from "../redux/features/CourseSlice";
+import { fetchData } from "../redux/features/courseSlice";
 import { useParams } from "react-router-dom";
 import CourseDetails from "./CourseDetails";
 const CoursePage = () => {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchData } from "../redux/features/CourseSlice";
+import { fetchData } from "../redux/features/courseSlice";
 import ProgressCard from "../components/ProgressCard";
 const DashBoard = () => {
   const [courseInProgress, setCourseInProgress] = useState([]);
