@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ProgressCard = (props) => {
   const { id, thumbnail, name, instructor } = props.course;
   return (
-    <div className="w-[320px] h-[460px]  md:w-[360px] md:h-[420px] bg-white text-black rounded-2xl px-10 relative">
+    <div className="w-[320px] h-[480px]  md:w-[360px] md:h-[420px] bg-white text-black rounded-2xl px-10 relative">
       <img src={thumbnail} className="h-[30%] mx-auto ptefrf-5 my-2" />
       <div className="mx-7 text-center h-[130px]">
         <h1 className="text-sm md:text-xl font-semibold text-gray-800">
