@@ -22,22 +22,50 @@ const DashBoard = () => {
       setCourseInProgress([courses]);
     }
   }, [data, status]);
-  //   console.log(courseInProgress);
+  function handleClick() {
+    setIsMarked(!isMarked);
+  }
+  const width = 50;
 
-  console.log(isMarked);
   return (
     <div className="mt-36 mx-10">
       <div className="bg-white text-gray-500  rounded-xl mb-10 p-4">
-        <h1>Courses in Progress : {courseInProgress.length}</h1>
+        <h1 className="text-green-500 text-4xl font-semibold">
+          Courses in Progress
+        </h1>
       </div>
       <div className="mb-5">
-        {courseInProgress?.map((course) => {
-          console.log({ course });
-          return <ProgressCard key={course.id} course={course} />;
-        })}
+        {!isMarked &&
+          courseInProgress?.map((course) => {
+            return (
+              <ProgressCard
+                key={course.id}
+                course={course}
+                handleClick={handleClick}
+                isMarked={isMarked}
+                width={width}
+              />
+            );
+          })}
       </div>
       <div className="bg-white text-gray-500  rounded-xl mb-10 p-4">
-        <h1>Courses Completed : {courseInProgress.length}</h1>
+        <h1 className="text-red-500 text-4xl font-semibold">
+          Courses Completed
+        </h1>
+      </div>
+      <div className="mb-5">
+        {isMarked &&
+          courseInProgress?.map((course) => {
+            return (
+              <ProgressCard
+                key={course.id}
+                course={course}
+                handleClick={handleClick}
+                isMarked={isMarked}
+                width={100}
+              />
+            );
+          })}
       </div>
     </div>
   );
