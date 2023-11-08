@@ -1,7 +1,6 @@
 import Syllabus from "../components/Syllabus";
 
 const CourseDetails = (course) => {
-  console.log(course);
   const {
     name,
     instructor,
@@ -20,12 +19,12 @@ const CourseDetails = (course) => {
         <img
           src={thumbnail}
           alt="course-image"
-          className="w-[50%] h-[350px] mx-auto mb-5"
+          className="w-[50%] mt-5 md:h-[350px] mx-auto mb-5"
         />
-        <h1 className="text-5xl font-bold">{name}</h1>
-        <h2 className="text-3xl font-semibold">Instructor: {instructor}</h2>
+        <h1 className="text-2xl md:text-5xl font-bold text-center">{name}</h1>
+        <h2 className="md:text-3xl font-semibold">Instructor: {instructor}</h2>
       </div>
-      <div className="text-gray-500 flex gap-5 justify-center text-xl py-5">
+      <div className="text-gray-500 flex flex-col px-6 md:flex-row gap-5 justify-center text-xl py-5">
         <p>🕔 {duration}</p>
         <p
           className={` font-bold ${
@@ -41,24 +40,24 @@ const CourseDetails = (course) => {
         <p>📍 {location}</p>
         <p>🎓 Student Enrolled: {students?.length}</p>
       </div>
-      <div className="text-gray-500 px-10">
+      <div className="text-gray-500 px-5 md:px-10">
         <div className="mb-5">
-          <h3 className="font-bold text-2xl">Description:</h3>
-          <p>{description}</p>
+          <h3 className="font-bold text-xl md:text-2xl">Description:</h3>
+          <p className="md:text-lg">{description}</p>
         </div>
         <div>
-          <p className="font-bold text-2xl">Pre-Requisites:</p>
+          <p className="font-bold text-xl md:text-2xl">Pre-Requisites:</p>
           <ul>
             {prerequisites?.map((p, i) => (
-              <li key={i} className="list-item">
+              <li key={i} className="list-item md:text-lg">
                 {p}{" "}
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="text-gray-500 px-10 pb-10">
-        <h2 className="text-3xl font-bold m-4">Syllabus</h2>
+      <div className="text-gray-500 px-5 md:px-10 pb-10">
+        <h2 className="text-xl md:text-3xl font-bold m-4">Syllabus</h2>
         {syllabus?.map((list, i) => {
           return <Syllabus data={list} key={i} />;
         })}

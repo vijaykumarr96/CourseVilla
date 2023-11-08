@@ -21,7 +21,6 @@ const CoursePage = () => {
       setCourseData(filteredCourse[0]);
     }
   }, [id, data, status]);
-  // console.log(courseData[0]);
   return (
     <div className="w-[75%] bg-white mx-auto rounded-2xl">
       {courseData && <CourseDetails course={courseData} />}
