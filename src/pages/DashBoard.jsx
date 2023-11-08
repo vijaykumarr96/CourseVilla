@@ -15,11 +15,12 @@ const DashBoard = () => {
 
   useEffect(() => {
     if (status === "succeeded") {
-      let courses = data?.find(
-        (course) => course.enrollmentStatus === "In Progress"
-      );
-
-      setCourseInProgress([courses]);
+      let courses = data
+        ?.map((course) => {
+          return course;
+        })
+        .filter((course) => course.enrollmentStatus === "In Progress");
+      setCourseInProgress(courses);
     }
   }, [data, status]);
   function handleClick() {
@@ -34,7 +35,7 @@ const DashBoard = () => {
           Courses in Progress
         </h1>
       </div>
-      <div className="mb-5">
+      <div className="mb-5 flex flex-col md:flex-row gap-5">
         {!isMarked &&
           courseInProgress?.map((course) => {
             return (
@@ -53,7 +54,7 @@ const DashBoard = () => {
           Courses Completed
         </h1>
       </div>
-      <div className="mb-5">
+      <div className="mb-5 flex flex-col md:flex-row gap-5">
         {isMarked &&
           courseInProgress?.map((course) => {
             return (
