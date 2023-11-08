@@ -12,7 +12,7 @@ const SearchBar = () => {
       <input
         type={"search"}
         placeholder="Find course by name or author..."
-        className="w-full p-4 bg-white rounded-full text-black px-10 md:text-2xl"
+        className="w-full p-4 bg-white rounded-full text-black px-10 md:text-2xl md:mb-20"
         value={text}
         onChange={handleSearch}
       />

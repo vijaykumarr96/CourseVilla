@@ -31,7 +31,17 @@ const CourseCard = (course) => {
       <p className="bg-gray-200 w-[80%] mx-auto h-0.5"></p>
       <div className="flex justify-around p-4 text-gray-900 text-sm md:text-lg">
         <p>{location}</p> |<p>{duration}</p> |
-        <p className="text-green-500 font-bold">{enrollmentStatus}</p>
+        <p
+          className={` font-bold ${
+            enrollmentStatus === "Open"
+              ? "text-green-500"
+              : enrollmentStatus === "In Progress"
+              ? "text-blue-500"
+              : "text-red-500"
+          }`}
+        >
+          {enrollmentStatus}
+        </p>
       </div>
       <p className="bg-gray-200 w-[80%] mx-auto h-0.5 mb-5"></p>
       <Link to={`/course/${id}`}>
